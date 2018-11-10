@@ -1,10 +1,3 @@
-/**
- * Main
- *
- * The main file, page logic which is needed on all pages will be included here.
- * Please note for specific components like a slider create a separated components/<component_name>.js
- * The components will be loaded through the component loader and are not needed on every page!
- */
 
 define( [ 'jquery', 'fastclick', 'mmenu' ], function( $, fast_click ) {
 	$( function() {
@@ -12,28 +5,7 @@ define( [ 'jquery', 'fastclick', 'mmenu' ], function( $, fast_click ) {
 
 
 
-		$( '#nav' ).mmenu(
-			{
-				scrollBugFix: true,
-				offCanvas: {
-					position: 'right'
-				},
-				navbar: {
-					title: ''
-				}
-			}, {
-				clone: true
-			}
-		);
-
-		$( 'a[href="#top"]' ).on(
-			'click', function( event ) {
-				event.preventDefault();
-
-				$( 'html, body' ).animate( { scrollTop: 0 } );
-			}
-		);
-
+		
 
 
 		//fb User detail
