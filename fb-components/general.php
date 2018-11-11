@@ -5,5 +5,5 @@ add_action("wp_ajax_nopriv_my_user_vote", "my_must_login");
 
 function my_user_vote() {
     $hello = "hello";
-
+    die();
 }
