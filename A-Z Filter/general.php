@@ -1,5 +1,8 @@
 <?php
-
+/*https://www.kathyisawesome.com/alphabetical-posts-glossary/(helping website)
+ *https://wordpress.stackexchange.com/questions/41660/group-posts-by-first-letter-of-title(helping website)
+ *Group Posts by First Letter of Title
+ */
 
 // Add new taxonomy, NOT hierarchical (like tags)
 function content_create_glossary_taxonomy(){
