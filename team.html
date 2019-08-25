@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Team List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+		li.is-active {
+			background: green;
+		}
+  </style>
+  <script>
+	$(document).ready(function(){
+		$(document).on('click','.btn-success',function(e){
+			e.preventDefault();
+			
+			$(this).parent('li').toggleClass('is-active');
+			$(this).parent('li').siblings().removeClass('is-active');
+			$(this).parents('ul').siblings().children('li').removeClass('is-active');
+			$(this).parents('ul').siblings().children('.js-last').remove();
+			var $content = $(this).prev('.pannel').text();
+			
+		
+			if($(this).parent('li').hasClass('is-active')){
+				if($('.js-last').length==''){
+					$(this).closest('ul').append('<li class="js-last jumbotron">'+$content+'</li>');
+				}else{
+					$(this).parents('ul').children('.js-last').html($content);
+				}
+			}else{
+				$(this).parents('ul').children('.js-last').remove();
+			}
+		});
+	});
+  </script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Team</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+	<ul class='js-team'>
+		<li>
+			<h1>Team 1</h1>
+			<p class='pannel'>
+				1Sed vehicula sem sit amet lorem elementum, quis vehicula dolor ultrices. Fusce rutrum malesuada ante sit amet maximus. Etiam odio felis, placerat ut condimentum nec, lobortis non purus. Donec sed ante interdum, dignissim sem a, lobortis arcu. Maecenas dictum ultrices arcu, ut gravida lectus tristique a. 
+			</p>
+			<a class="btn btn-success" href="#">Name1</a>
+		</li>
+		<li>
+			<h1>Team 2</h1>
+			<p class='pannel'>
+				2Sed vehicula sem sit amet lorem elementum, quis vehicula dolor ultrices. Fusce rutrum malesuada ante sit amet maximus. Etiam odio felis, placerat ut condimentum nec, lobortis non purus. Donec sed ante interdum, dignissim sem a, lobortis arcu. Maecenas dictum ultrices arcu, ut gravida lectus tristique a. 
+			</p>
+			<a class="btn btn-success" href="#">Name2</a>
+		</li>
+	</ul>
+	<ul class='js-team'>
+		<li>
+			<h1>Team 3</h1>
+			<p class='pannel'>
+				3Sed vehicula sem sit amet lorem elementum, quis vehicula dolor ultrices. Fusce rutrum malesuada ante sit amet maximus. Etiam odio felis, placerat ut condimentum nec, lobortis non purus. Donec sed ante interdum, dignissim sem a, lobortis arcu. Maecenas dictum ultrices arcu, ut gravida lectus tristique a. 
+			</p>
+			<a class="btn btn-success" href="#">Name3</a>
+		</li>
+		<li>
+		<h1>Team 4</h1>
+		<p class='pannel'>
+				4Sed vehicula sem sit amet lorem elementum, quis vehicula dolor ultrices. Fusce rutrum malesuada ante sit amet maximus. Etiam odio felis, placerat ut condimentum nec, lobortis non purus. Donec sed ante interdum, dignissim sem a, lobortis arcu. Maecenas dictum ultrices arcu, ut gravida lectus tristique a. 
+			</p>
+			<a class="btn btn-success" href="#">Name4</a>
+		</li>
+	</ul>
+  </div>
+</div>
+
+</body>
+</html>
